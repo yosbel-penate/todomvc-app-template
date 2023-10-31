@@ -22,6 +22,6 @@ CREATE TABLE question(
     author_id INTEGER NOT NULL,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     body TEXT NOT NULL,
-    is_checked BIT,
+    is_checked BIT NOT NULL DEFAULT 0,
     FOREIGN KEY (author_id) REFERENCES user (id)
 );
