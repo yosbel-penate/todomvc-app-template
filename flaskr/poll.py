@@ -33,19 +33,19 @@ def create():
         else:
             db = get_db()
             db.execute(
-                'INSERT INTO questions ( body, author_id)'
-                ' VALUES (?, ?, ?)',
+                'INSERT INTO question ( body, author_id)'
+                ' VALUES (?, ?)',
                 ( body, g.user['id'])
             )
             db.commit()
-            return redirect(url_for('poll.index'))
+            return redirect(url_for('poll'))
 
     return render_template('poll/index.html')
 
 def get_question(id, check_author=True):
     post = get_db().execute(
         'SELECT q.id, body, created, author_id, username'
-        ' FROM question q JOIN user u ON p.author_id = u.id'
+        ' FROM question q JOIN user u ON q.author_id = u.id'
         ' WHERE q.id = ?',
         (id,)
     ).fetchone()
@@ -65,4 +65,4 @@ def delete(id):
     db = get_db()
     db.execute('DELETE FROM question WHERE id = ?', (id,))
     db.commit()
-    return redirect(url_for('poll.index'))
+    return redirect(url_for('poll'))
