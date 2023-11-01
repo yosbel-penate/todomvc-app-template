@@ -1,60 +1,42 @@
 # Framework Name • [TodoMVC](http://todomvc.com)
 
-> Official description of the framework (from its website)
+> Aplicación para crear cuestionarios de preguntas
 
 
 ## Resources
 
-- [Website]()
-- [Documentation]()
-- [Used by]()
-- [Blog]()
-- [FAQ]()
-
-### Articles
-
-- [Interesting article]()
-
-### Support
-
-- [Stack Overflow](http://stackoverflow.com/questions/tagged/__)
-- [Google Groups]()
-- [Twitter](http://twitter.com/__)
-- [Google+]()
-
-*Let us [know](https://github.com/tastejs/todomvc/issues) if you discover anything worth sharing.*
+- [Website](https://todomvc.com/)
+- [Documentation](https://flask.palletsprojects.com/)
+- [Used by](Yosbel Peñate)
 
 
 ## Implementation
 
-How was the app created? Anything worth sharing about the process of creating the app? Any spec violations?
+Esta app ha sido creada utilizando Flask.
+# Create envrioment and install requirements
+
+# Initialized the database.
+
+flask --app flaskr init-db
+
+# Run the app:
+flask --app flaskr run --debug
+
+# Run all Tests
+pytest
+
+# Coverage
+coverage run -m pytest
+
+# Coverage report
+
+coverage report
+
+# Export coverage report in html
+
+coverage html
 
 
 ## Credit
 
-Created by [Your Name](http://your-website.com)
-
-
-//---------------------------------------
-Run the app:
-flask --app flaskr run --debug
-//---------------------------------------
-Run the init-db command:
-
-$ flask --app flaskr init-db
-Initialized the database.
-
-//----------------------
-Run all Tests
-$ pytest
-
-Coverage
-$ coverage run -m pytest
-
-Coverage report
-
-$ coverage report
-
-Export coverage report in html
-
-$ coverage html
+Created by [Yosbel Peñate](http://your-website.com)
