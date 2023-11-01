@@ -9,7 +9,6 @@
 - [Documentation](https://flask.palletsprojects.com/)
 - [Used by](Yosbel Peñate)
 
-
 ## Implementation
 
 Esta app ha sido creada utilizando Flask.
