@@ -13,27 +13,26 @@
 
 Esta app ha sido creada utilizando Flask.
 
-# Initialized the database.
+### Initialized the database.
 
 flask --app flaskr init-db
 
-# Run the app:
+### Run the app:
 flask --app flaskr run --debug
 
-# Run all Tests
+### Run all Tests
 pytest
 
-# Coverage
+### Coverage
 coverage run -m pytest
 
-# Coverage report
+### Coverage report
 
 coverage report
 
-# Export coverage report in html
+### Export coverage report in html
 
 coverage html
-
 
 ## Credit
 
