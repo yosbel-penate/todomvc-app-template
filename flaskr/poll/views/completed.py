@@ -7,4 +7,3 @@ def completed():
     questions = query_select_non_checked_question(db)
     filter='completed'
     return render_template('poll/index.html', questions=questions, filter=filter )
-
