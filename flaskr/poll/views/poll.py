@@ -1,22 +1,14 @@
 from .blueprint import *
+from ..model import query_get_all_questions, query_get_questions_by_user_id
 
 @bp.route('/')
 def poll():
     db = get_db()
     questions = ...
     if g.user:
-        questions = db.execute(
-            'SELECT q.id, body, is_checked, author_id, username'
-            ' FROM question q JOIN user u ON q.author_id = u.id'
-            ' WHERE u.id = ?'
-            ' ORDER BY created DESC',
-            ( g.user['id'],)
-        ).fetchall()
+        questions = query_get_questions_by_user_id(db)
     else:
-        questions = db.execute(
-            'SELECT q.id, body, is_checked, author_id, username'
-            ' FROM question q JOIN user u ON q.author_id = u.id'
-            ' ORDER BY created DESC'
-        ).fetchall()
+        questions = query_get_all_questions(db)
     filter='all'
     return render_template('poll/index.html', questions=questions, filter=filter)
+

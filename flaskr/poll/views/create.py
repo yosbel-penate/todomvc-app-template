@@ -1,4 +1,5 @@
 from .blueprint import *
+from ..model import query_insert_question
 
 @bp.route('/poll/create', methods=('GET', 'POST'))
 @login_required
@@ -15,12 +16,8 @@ def create():
         else:
             is_checked = 0
             db = get_db()
-            db.execute(
-                'INSERT INTO question ( body, is_checked, author_id)'
-                ' VALUES (?, ?, ?)',
-                ( body, is_checked, g.user['id'])
-            )
-            db.commit()
+            query_insert_question(body, is_checked, db)
             return redirect(url_for('index'))
 
     return render_template('poll/index.html')
+
