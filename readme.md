@@ -13,7 +13,6 @@
 ## Implementation
 
 Esta app ha sido creada utilizando Flask.
-# Create envrioment and install requirements
 
 # Initialized the database.
 
