@@ -1,6 +1,6 @@
 # Framework Name • [TodoMVC](http://todomvc.com)
 
-> Aplicación para crear cuestionarios de preguntas
+> Application to create question questionnaires
 
 
 ## Resources
@@ -11,28 +11,28 @@
 
 ## Implementation
 
-Esta app ha sido creada utilizando Flask.
+This app has been created using Flask.
 
 ### Initialized the database.
 
-flask --app flaskr init-db
+>flask --app flaskr init-db
 
 ### Run the app:
-flask --app flaskr run --debug
+>flask --app flaskr run --debug
 
 ### Run all Tests
-pytest
+>pytest
 
 ### Coverage
 coverage run -m pytest
 
 ### Coverage report
 
-coverage report
+>coverage report
 
 ### Export coverage report in html
 
-coverage html
+>coverage html
 
 ## Credit
 
