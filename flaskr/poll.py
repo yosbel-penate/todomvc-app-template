@@ -7,7 +7,7 @@ from flaskr.db import get_db
 
 bp = Blueprint('poll', __name__)
 
-@bp.route('/poll')
+@bp.route('/')
 def poll():
     db = get_db()
     questions = ...
@@ -49,7 +49,7 @@ def create():
                 ( body, is_checked, g.user['id'])
             )
             db.commit()
-            return redirect(url_for('poll'))
+            return redirect(url_for('index'))
 
     return render_template('poll/index.html')
 
@@ -76,7 +76,7 @@ def delete(id):
     db = get_db()
     db.execute('DELETE FROM question WHERE id = ?', (id,))
     db.commit()
-    return redirect(url_for('poll'))
+    return redirect(url_for('index'))
 
 @bp.route('/poll/update', methods=['POST'])
 @login_required
@@ -99,7 +99,7 @@ def clear_complete():
     db = get_db()
     db.execute('DELETE FROM question WHERE author_id = ?', (g.user['id'],))
     db.commit()
-    return redirect(url_for('poll'))
+    return redirect(url_for('index'))
 
 @bp.route('/poll/active')
 def active():
